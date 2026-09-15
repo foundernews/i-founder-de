@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testseite – i.founder.de</title>
+<meta name="description" content="Kleine Testseite zur Prüfung des Hostings auf i.founder.de.">
+<meta property="og:title" content="Testseite – i.founder.de">
+<meta property="og:description" content="Kleine Testseite zur Prüfung des Hostings auf i.founder.de.">
+<meta property="og:url" content="https://i.founder.de/testseite/">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page:#F5F2EC; --card:#FDFCF9; --ink:#1A1A1A; --text:#2D2D2D;
+    --muted:#888880; --line:#E8E3D8; --gold:#C9A227; --green:#5A8A3C;
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--page); color:var(--text); font-family:var(--sans);
+    min-height:100vh; display:flex; flex-direction:column;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{flex:1; display:flex; align-items:center; justify-content:center; padding:48px 20px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:48px 40px; max-width:520px; width:100%; text-align:center;
+    box-shadow:0 8px 30px rgba(26,26,26,.06);
+  }
+  .check{
+    width:64px; height:64px; border-radius:50%; margin:0 auto 24px;
+    background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center;
+  }
+  .check svg{width:32px; height:32px}
+  .eyebrow{
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold);
+    font-weight:500; margin:0 0 14px;
+  }
+  h1{font-family:var(--serif); font-weight:600; font-size:34px; line-height:1.15; color:var(--ink); margin:0 0 16px}
+  p{font-size:17px; line-height:1.6; margin:0 0 8px}
+  .url{
+    display:inline-block; margin-top:22px; padding:10px 16px; border:1px solid var(--line);
+    border-radius:8px; font-size:14px; color:var(--muted); background:var(--page);
+    font-variant-numeric:tabular-nums; word-break:break-all;
+  }
+  footer{padding:20px; text-align:center; font-size:13px; color:var(--muted)}
+  footer a{color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--ink)}
+  @media (max-width:480px){
+    main{padding:32px 16px}
+    .card{padding:36px 22px}
+    h1{font-size:28px}
+    p{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <div class="check" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </div>
+    <p class="eyebrow">Testseite</p>
+    <h1>Es funktioniert.</h1>
+    <p>Diese Seite liegt auf i.founder.de und wurde am 15. September 2026 veröffentlicht.</p>
+    <span class="url">https://i.founder.de/testseite/</span>
+  </div>
+</main>
+<footer>
+  <a href="https://founder-de.lpages.co/foundervita/" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a>
+</footer>
+</body>
+</html>
