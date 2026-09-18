@@ -95,7 +95,11 @@
   .final h2{font-family:var(--serif);font-weight:900;font-size:clamp(26px,3.2vw,38px);line-height:1.25;color:var(--ink);margin:0 auto 10px;max-width:700px;text-wrap:balance}
   .final .when{font-size:16px;color:var(--text);margin:0 0 26px}
   .final .when strong{color:var(--ink)}
-  .final .signup{max-width:460px;margin:0 auto;text-align:left}
+  .final .final-cta{max-width:420px;margin:0 auto}
+  .final .submit{margin-top:0}
+  .gr-form{margin:4px 0 0}
+  .gr-form getresponse-form{display:block}
+  .gr-form input[type=text],.gr-form input[type=email]{font-family:var(--sans)!important;font-size:16px!important}
 
   /* Footer */
   .site-footer{text-align:center;padding:20px 0;background:var(--footer);margin-top:auto}
@@ -124,6 +128,14 @@
     .submit,.site-footer a{transition:none}
   }
 </style>
+<!-- GetResponse Analytics -->
+<script type="text/javascript">
+(function(m, o, n, t, e, r, _){
+        m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+        r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+    })(window, document, 'script', 'https://an.gr-wcon.com/script/6c6dc7f7-077d-4675-bd87-45e26325aedc/ga.js', 'GrTracking');
+</script>
+<!-- End GetResponse Analytics -->
 </head>
 <body>
 <div class="page">
@@ -148,20 +160,14 @@
         <figcaption>Dr. med. Cordelia Schott lädt dich ein · 1 Minute</figcaption>
       </figure>
 
-      <form class="signup" id="anmeldung" action="https://cf.founder.de/bestseller" method="post">
+      <div class="signup" id="anmeldung">
         <h2>Dein Platz im kostenlosen Live-Kurs</h2>
         <p class="when"><strong>Dienstag, 29. September, 19:00–21:00 Uhr</strong><br>live per Zoom mit Prof. Dr. Oliver Pott. 100 % kostenlos.</p>
-        <div class="field">
-          <label for="f-name">Dein Name</label>
-          <input id="f-name" name="contact[name]" type="text" autocomplete="name" placeholder="Vor- und Nachname" required>
+        <div class="gr-form">
+          <getresponse-form form-id="940524ef-bb70-4ea4-ae61-610be808b68a" e="0"></getresponse-form>
         </div>
-        <div class="field">
-          <label for="f-mail">Deine E-Mail-Adresse</label>
-          <input id="f-mail" name="contact[email]" type="email" autocomplete="email" placeholder="name@beispiel.de" required>
-        </div>
-        <button class="submit" type="submit">Jetzt kostenlos anmelden →</button>
         <p class="privacy">Deine Daten sind sicher. Wir nutzen sie ausschließlich, um dir den Zugangslink zum Live-Kurs zu schicken.</p>
-      </form>
+      </div>
     </div>
 
     <section class="band">
@@ -230,18 +236,8 @@
     <section class="final">
       <h2>Dr. med. Cordelia Schott hat es hinter sich.<br>Du hast es noch vor dir.</h2>
       <p class="when"><strong>Dienstag, 29. September, 19:00–21:00 Uhr</strong> · live per Zoom · 100 % kostenlos</p>
-      <form class="signup" action="https://cf.founder.de/bestseller" method="post">
-        <div class="field">
-          <label for="f-name2">Dein Name</label>
-          <input id="f-name2" name="contact[name]" type="text" autocomplete="name" placeholder="Vor- und Nachname" required>
-        </div>
-        <div class="field">
-          <label for="f-mail2">Deine E-Mail-Adresse</label>
-          <input id="f-mail2" name="contact[email]" type="email" autocomplete="email" placeholder="name@beispiel.de" required>
-        </div>
-        <button class="submit" type="submit">Jetzt kostenlos anmelden →</button>
-        <p class="privacy">Deine Daten sind sicher. Wir nutzen sie ausschließlich, um dir den Zugangslink zum Live-Kurs zu schicken.</p>
-      </form>
+      <p class="final-cta"><a class="submit" href="#anmeldung">Jetzt kostenlos anmelden →</a></p>
+      <p class="privacy">Deine Daten sind sicher. Wir nutzen sie ausschließlich, um dir den Zugangslink zum Live-Kurs zu schicken.</p>
     </section>
 
   </main>
