@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Entscheidungsrechner – Top-Verlag oder Self-Publishing?</title>
+<meta name="description" content="Entscheidungsrechner der Bestseller MasterClass: Bewerte zwölf Buchziele und sieh, ob ein Top-Verlag oder Self-Publishing besser zu deinem Buch passt.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Entscheidungsrechner – Top-Verlag oder Self-Publishing?">
+<meta property="og:description" content="Bewerte zwölf Buchziele und sieh, welcher Veröffentlichungsweg zu deinem Buch passt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://i.founder.de/entscheidungsrechner/">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page:#F5F2EC; --card:#FDFCF9; --line:#E8E3D8; --ink:#1A1A1A; --text:#2D2D2D;
+    --muted:#77776F; --gold:#C9A227; --gold-deep:#8F7110; --gold-soft:#F3E9C6; --red:#B23A2C;
+    --footer:#111111; --footer-link:#AAAAAA;
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{color-scheme:light;scroll-behavior:smooth}
+  body{margin:0;background:var(--page);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .page{min-height:100vh;display:flex;flex-direction:column}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  .site-header{display:flex;justify-content:center;align-items:center;padding:18px 24px;background:var(--ink);border-bottom:2px solid var(--gold)}
+  .wordmark{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:.02em;color:#fff}
+  .wordmark em{font-style:italic;color:var(--gold)}
+
+  main{width:100%;max-width:820px;margin:0 auto;padding:0 20px 120px}
+
+  .hero{text-align:center;padding:52px 0 34px}
+  .eyebrow{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+  h1{font-family:var(--serif);font-weight:900;font-size:clamp(34px,6vw,52px);line-height:1.15;color:var(--ink);margin:0 auto;text-wrap:balance}
+  h1 em{font-style:italic;font-weight:700;color:var(--gold-deep)}
+  .hero p.sub{max-width:600px;margin:18px auto 0;font-size:17px;color:var(--text)}
+
+  .scale{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:28px}
+  .scale h2{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .scale ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .scale li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;font-size:13px;line-height:1.3;color:var(--text)}
+  .scale .dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;border:1.5px solid var(--ink);color:var(--ink);font-variant-numeric:tabular-nums}
+  .scale li:nth-child(5) .dot{background:var(--ink);color:#fff}
+  .scale li small{display:block;color:var(--muted);font-size:12px}
+
+  .q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 26px 24px;margin-bottom:16px;transition:border-color .2s ease,box-shadow .2s ease}
+  .q.done{border-color:#D9CFAE}
+  .q.miss{border-color:var(--red);box-shadow:0 0 0 3px rgba(178,58,44,.12)}
+  .q-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .q-num{font-family:var(--serif);font-weight:900;font-size:26px;line-height:1;color:var(--gold);font-variant-numeric:lining-nums tabular-nums;flex-shrink:0;min-width:34px}
+  .q h3{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.25;color:var(--ink);margin:0;text-wrap:balance}
+  .q p.info{margin:0 0 18px 48px;font-size:14.5px;color:var(--muted);max-width:62ch}
+  fieldset{border:0;margin:0 0 0 48px;padding:0;min-width:0}
+  legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .seg{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  .seg label{position:relative;display:block;cursor:pointer}
+  .seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+  .seg span{display:grid;place-items:center;height:48px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-weight:700;font-size:16px;color:var(--text);font-variant-numeric:tabular-nums;transition:background .15s ease,border-color .15s ease,color .15s ease}
+  .seg label:hover span{border-color:var(--gold)}
+  .seg input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+  .seg input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+  .ends{display:flex;justify-content:space-between;margin-top:7px;font-size:12px;color:var(--muted)}
+
+  .go{display:block;width:100%;margin:28px 0 0;padding:20px 16px;border:0;border-radius:12px;background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:filter .15s ease}
+  .go:hover{filter:brightness(1.06)}
+  .hint{min-height:22px;margin:10px 0 0;text-align:center;font-size:14px;color:var(--red)}
+
+  .result{display:none;margin-top:36px;background:var(--ink);color:#F3EFE6;border-radius:18px;padding:40px 36px 36px;border-top:4px solid var(--gold)}
+  .result.show{display:block}
+  .result .eyebrow{color:var(--gold)}
+  .result h2{font-family:var(--serif);font-weight:900;font-size:clamp(28px,5vw,40px);line-height:1.15;color:#fff;margin:0 0 26px;text-wrap:balance}
+  .bars-k{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A9A59B}
+  .bars{display:grid;gap:14px;margin-bottom:12px}
+  .bar{display:grid;grid-template-columns:130px 1fr 64px;align-items:center;gap:14px}
+  .bar .name{font-size:14px;font-weight:600;color:#D8D3C7}
+  .bar .track{height:14px;border-radius:7px;background:rgba(255,255,255,.12);overflow:hidden}
+  .bar .fill{display:block;height:100%;width:0;border-radius:7px;background:#8C887F;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+  .bar.win .fill{background:var(--gold)}
+  .bar.win .name{color:#fff}
+  .bar .pct{font-family:var(--serif);font-weight:900;font-size:26px;text-align:right;color:#D8D3C7;font-variant-numeric:lining-nums tabular-nums}
+  .bar.win .pct{color:var(--gold)}
+  .gap{margin:0 0 26px;font-size:13px;color:#A9A59B}
+  .summary{font-size:17px;line-height:1.6;color:#F3EFE6;margin:0 0 28px;max-width:62ch}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:26px}
+  .cols h4{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .cols ul{list-style:none;margin:0;padding:0}
+  .cols li{padding:9px 0;border-top:1px solid rgba(255,255,255,.12);font-size:15px;line-height:1.4;color:#F3EFE6}
+  .cols li small{display:block;color:#A9A59B;font-size:12.5px;margin-top:2px}
+  .conflict{display:none;border:1px solid rgba(226,120,105,.55);background:rgba(178,58,44,.16);border-radius:12px;padding:16px 18px;margin-bottom:26px;font-size:15px;line-height:1.5;color:#F6E3DF}
+  .conflict.show{display:block}
+  .conflict strong{color:#fff}
+  details{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;margin-bottom:28px}
+  summary{cursor:pointer;font-size:14px;font-weight:600;color:#D8D3C7}
+  .tbl-wrap{overflow-x:auto;margin-top:14px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+  th,td{padding:8px 8px;border-bottom:1px solid rgba(255,255,255,.1);text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  th{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9A59B;vertical-align:bottom}
+  td{color:#F3EFE6}
+  .formula{margin:12px 0 0;font-size:12.5px;color:#A9A59B;line-height:1.5}
+  .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:10px;font-family:var(--sans);font-size:14px;font-weight:700;letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:filter .15s ease,background .15s ease}
+  .btn.primary{background:var(--gold);color:var(--ink);border:0}
+  .btn.primary:hover{filter:brightness(1.08)}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:10;background:rgba(253,252,249,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 20px calc(10px + env(safe-area-inset-bottom))}
+  .dock-in{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:16px}
+  .dock .count{font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .dock .meter{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+  .dock .meter i{display:block;height:100%;width:0;background:var(--gold);border-radius:3px;transition:width .3s ease}
+
+  .site-footer{text-align:center;padding:22px 20px 84px;background:var(--footer);margin-top:auto;font-size:13px;color:var(--footer-link)}
+  .site-footer a{color:var(--footer-link);text-decoration:underline}
+  .site-footer a:hover{color:#fff}
+
+  @media (max-width:640px){
+    main{padding:0 16px 120px}
+    .hero{padding:38px 0 26px}
+    .scale{padding:18px 14px}
+    .scale ol{gap:4px}
+    .scale li{font-size:11.5px}
+    .scale li small{display:none}
+    .q{padding:20px 18px}
+    .q p.info,fieldset{margin-left:0}
+    .q h3{font-size:20px}
+    .result{padding:30px 20px 26px;border-radius:14px}
+    .bar{grid-template-columns:1fr 56px;gap:6px 10px}
+    .bar .name{grid-column:1 / -1}
+    .cols{grid-template-columns:1fr;gap:20px}
+    .btn{width:100%}
+    table{table-layout:fixed}
+    th,td{padding:8px 3px;text-align:center}
+    th{font-size:9px;letter-spacing:0;white-space:normal}
+    th:nth-child(1){width:44%} th:nth-child(2){width:20%} th:nth-child(3){width:14%} th:nth-child(4){width:22%}
+    td{font-size:13px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .bar .fill,.dock .meter i,.q,.seg span{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="wordmark">Bestseller <em>MasterClass</em></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Entscheidungsrechner · Stand September 2026</p>
+      <h1>Top-Verlag <em>oder</em> Self-Publishing?</h1>
+      <p class="sub">Bewerte zwölf Ziele für dein Buch. Der Rechner zeigt dir, welcher Veröffentlichungsweg zu deinen Prioritäten passt – und warum.</p>
+    </section>
+
+    <section class="scale" aria-label="Bedeutung der Bewertungen">
+      <h2>So bewertest du</h2>
+      <ol>
+        <li><span class="dot">1</span><span>Unwichtig<small>spielt keine Rolle</small></span></li>
+        <li><span class="dot">2</span><span>Eher unwichtig<small>Nebensache</small></span></li>
+        <li><span class="dot">3</span><span>Mittel<small>schön, aber nicht entscheidend</small></span></li>
+        <li><span class="dot">4</span><span>Wichtig<small>zählt für den Erfolg</small></span></li>
+        <li><span class="dot">5</span><span>Sehr wichtig<small>oberste Priorität</small></span></li>
+      </ol>
+    </section>
+
+    <form id="form" novalidate>
+      <div id="questions"></div>
+      <button type="submit" class="go">Ergebnis berechnen</button>
+      <p class="hint" id="hint" role="status" aria-live="polite"></p>
+    </form>
+
+    <section class="result" id="result" aria-live="polite" tabindex="-1">
+      <p class="eyebrow">Dein Ergebnis</p>
+      <h2 id="verdict"></h2>
+      <p class="bars-k">Passung auf einer Skala von 1 bis 5</p>
+      <div class="bars">
+        <div class="bar" id="barV"><span class="name">Top-Verlag</span><span class="track"><span class="fill"></span></span><span class="pct"></span></div>
+        <div class="bar" id="barS"><span class="name">Self-Publishing</span><span class="track"><span class="fill"></span></span><span class="pct"></span></div>
+      </div>
+      <p class="gap" id="gap"></p>
+      <p class="summary" id="summary"></p>
+      <div class="conflict" id="conflict"></div>
+      <div class="cols" id="cols">
+        <div><h4 id="proTitle">Das gibt den Ausschlag</h4><ul id="pro"></ul></div>
+        <div><h4 id="conTitle">Das spricht für den anderen Weg</h4><ul id="con"></ul></div>
+      </div>
+      <details>
+        <summary>So wurde gerechnet: deine Bewertungen und die Gewichte je Weg</summary>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Ziel</th><th>Bewertung</th><th>Verlag</th><th>Self-Publishing</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p class="formula">Passung je Weg: Durchschnitt der Gewichte, gewichtet mit (Bewertung − 1). Eine 1 zählt als null – was dir unwichtig ist, fließt nicht ein. Unter 0,2 Punkten Abstand gibt es keinen Favoriten, ab 0,6 gilt die Empfehlung als klar.</p>
+      </details>
+      <div class="actions">
+        <a class="btn primary" href="whitepaper-verlag-oder-self-publishing-2026.pdf" target="_blank" rel="noopener">Whitepaper: die Analyse dahinter (PDF)</a>
+        <button type="button" class="btn ghost" id="reset">Rechner zurücksetzen</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="dock" id="dock">
+    <div class="dock-in">
+      <span class="count" id="count">0 von 12 bewertet</span>
+      <span class="meter" aria-hidden="true"><i id="meter"></i></span>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © Bestseller MasterClass · Prof. Dr. Oliver Pott · Nur für Teilnehmer · <a href="https://founder-de.lpages.co/foundervita/">Impressum und Datenschutzerklärung</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var GOALS = [{"n": 1, "title": "Top-Experten-Positionierung", "info": "Ein renommierter Verlag wirkt als Qualitätsfilter: Nach Branchenschätzungen werden über 95 % der unverlangt eingesandten Manuskripte abgelehnt. Wer angenommen wird, trägt dieses Siegel.", "v": 5, "s": 1}, {"n": 2, "title": "Medien-Sichtbarkeit", "info": "Verlage bringen Pressearbeit, Rezensionsexemplare und gewachsene Redaktionskontakte mit. Als Self-Publisher organisierst und bezahlst du das alles selbst.", "v": 5, "s": 2}, {"n": 3, "title": "Legacy: Wissen und Geschichte bewahren", "info": "Verlagstitel genießen mehr kulturelle Anerkennung und Präsenz in Bibliotheken. Archiviert wird dein Buch aber auf beiden Wegen – und per Print-on-Demand bleibt es dauerhaft lieferbar.", "v": 4, "s": 3}, {"n": 4, "title": "Buch als Neukunden-Akquisetool", "info": "Beide Wege funktionieren, aber unterschiedlich: Der Verlag liefert Glaubwürdigkeit im Erstkontakt, Self-Publishing volle Kontrolle über Preis, Aktionen und Links im Buch.", "v": 3, "s": 3}, {"n": 5, "title": "Buch als Luxus-Visitenkarte", "info": "Für den ersten Eindruck bei Vorständen, vermögenden Kunden und Veranstaltern zählt, welches Haus auf dem Buchrücken steht.", "v": 5, "s": 2}, {"n": 6, "title": "SPIEGEL-Bestseller", "info": "Gezählt werden nur gedruckte Exemplare aus dem Handelspanel von Media Control. Self-Publishing-Titel schaffen es in seltenen Ausnahmen – reine Amazon-KDP-Verkäufe tauchen dort oft gar nicht auf.", "v": 5, "s": 1}, {"n": 7, "title": "Wirtschafts-, Amazon- oder Themen-Bestseller", "info": "Die Wirtschaftsbestseller-Liste des Manager Magazins beruht wie die SPIEGEL-Liste auf Buchhandelsdaten – Vorteil Verlag. Amazon-Kategorie-Bestseller erreichst du auf beiden Wegen.", "v": 4, "s": 3}, {"n": 8, "title": "Internationalisierung", "info": "Verlage verkaufen Übersetzungsrechte über gewachsene Netzwerke. Neu: KI-Übersetzung macht eine englische Ausgabe auch im Self-Publishing machbar – die Vermarktung vor Ort bleibt die Hürde.", "v": 4, "s": 2}, {"n": 9, "title": "Einnahmen direkt aus Tantiemen", "info": "Self-Publishing über Amazon KDP: bis 70 % beim E-Book, 60 % minus Druckkosten beim Taschenbuch. Verlag: etwa 5 bis 10 % vom Nettoladenpreis.", "v": 1, "s": 5}, {"n": 10, "title": "Einnahmen im Backend", "info": "Self-Publishing gibt dir volle Kontrolle über Links, Boni und Timing im Buch. Ein Verlagsbuch rechtfertigt dafür höhere Preise für MasterClass, Coaching oder Beratung.", "v": 3, "s": 4}, {"n": 11, "title": "Thema maximal verbreiten", "info": "Der stationäre Buchhandel steht für rund 41 % des Buchumsatzes, E-Books für gut 6 %. In die Läden kommst du verlässlich nur mit Verlag – online kann Self-Publishing mithalten.", "v": 4, "s": 3}, {"n": 12, "title": "Hörbuch-Auskopplung", "info": "ACX, Audibles Plattform für Selbstverleger, steht Autoren mit Sitz in Deutschland nicht offen. Verlage vergeben Hörbuchrechte über eingespielte Partner; im Self-Publishing produzierst und vertreibst du auf eigene Kosten.", "v": 4, "s": 3}];
+  var KEY = "bmc-entscheidungsrechner-v2";
+  var N = GOALS.length;
+  var ratings = new Array(N).fill(null);
+  var shown = false;
+  var $ = function(id){ return document.getElementById(id); };
+
+  function load(){
+    try{
+      var raw = localStorage.getItem(KEY);
+      if(!raw) return;
+      var arr = JSON.parse(raw);
+      if(Array.isArray(arr) && arr.length === N){
+        ratings = arr.map(function(x){ return (x>=1 && x<=5) ? x : null; });
+      }
+    }catch(e){}
+  }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(ratings)); }catch(e){} }
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(text != null) e.textContent = text;
+    return e;
+  }
+
+  function build(){
+    var root = $("questions");
+    GOALS.forEach(function(g, i){
+      var card = el("section", "q"); card.id = "q" + g.n;
+      var head = el("div", "q-head");
+      head.appendChild(el("span", "q-num", String(g.n).padStart(2, "0")));
+      var h = el("h3", null, g.title); h.id = "t" + g.n;
+      head.appendChild(h);
+      card.appendChild(head);
+      card.appendChild(el("p", "info", g.info));
+      var fs = el("fieldset");
+      fs.appendChild(el("legend", null, "Wie wichtig ist dir: " + g.title + "?"));
+      var seg = el("div", "seg");
+      for(var v = 1; v <= 5; v++){
+        var lab = el("label");
+        var inp = document.createElement("input");
+        inp.type = "radio"; inp.name = "g" + g.n; inp.value = String(v);
+        inp.setAttribute("aria-label", v + " von 5");
+        if(ratings[i] === v) inp.checked = true;
+        (function(idx, val){
+          inp.addEventListener("change", function(){ ratings[idx] = val; onChange(idx); });
+        })(i, v);
+        lab.appendChild(inp);
+        lab.appendChild(el("span", null, String(v)));
+        seg.appendChild(lab);
+      }
+      fs.appendChild(seg);
+      var ends = el("div", "ends");
+      ends.appendChild(el("span", null, "unwichtig"));
+      ends.appendChild(el("span", null, "sehr wichtig"));
+      fs.appendChild(ends);
+      card.appendChild(fs);
+      if(ratings[i] != null) card.classList.add("done");
+      root.appendChild(card);
+    });
+  }
+
+  function answered(){ return ratings.filter(function(x){ return x != null; }).length; }
+
+  function progress(){
+    var a = answered();
+    $("count").textContent = a + " von " + N + " bewertet";
+    $("meter").style.width = (a / N * 100) + "%";
+  }
+
+  function onChange(idx){
+    var card = $("q" + GOALS[idx].n);
+    card.classList.add("done"); card.classList.remove("miss");
+    $("hint").textContent = "";
+    save(); progress();
+    if(shown && answered() === N) render(false);
+  }
+
+  /* Rechenkern: Passung je Weg = Durchschnitt der Gewichte (1-5), gewichtet mit (Bewertung - 1).
+     Eine 1 zaehlt als null. Ein Ziel, das ein Weg besser erreicht, zieht immer zu diesem Weg. */
+  function compute(r){
+    var sp = 0, sv = 0, ss = 0;
+    GOALS.forEach(function(g, i){ var p = r[i] - 1; sp += p; sv += p * g.v; ss += p * g.s; });
+    if(sp === 0) return { empty: true, fv: 0, fs: 0, rv: 0, rs: 0, contrib: [] };
+    var fv = sv / sp, fs = ss / sp;
+    var contrib = GOALS.map(function(g, i){ return { g: g, r: r[i], d: (r[i] - 1) * (g.v - g.s) / sp }; });
+    return { empty: false, fv: fv, fs: fs, rv: Math.round(fv * 10) / 10, rs: Math.round(fs * 10) / 10, contrib: contrib };
+  }
+  function fmt(x){ return x.toFixed(1).replace(".", ","); }
+  window.__compute = compute; window.__GOALS = GOALS;
+
+  var HARD = [1, 2, 5, 6];   /* schliessen sich mit Ziel 9 (hohe Tantiemen) praktisch aus */
+
+  function render(scroll){
+    var c = compute(ratings);
+    var diff = Math.round(Math.abs(c.rv - c.rs) * 10) / 10;
+    var allLow = c.empty;
+    var win = (allLow || diff < 0.2) ? null : (c.rv > c.rs ? "V" : "S");
+    var strong = diff >= 0.6;
+
+    var verdict, summary;
+    if(allLow){
+      verdict = "Noch keine Priorität gesetzt";
+      summary = "Du hast alle zwölf Ziele als unwichtig bewertet. Überlege, wofür dein Buch stehen soll, und vergib höhere Werte für die Ziele, die dir wirklich etwas bedeuten.";
+    } else if(!win){
+      verdict = "Kein klarer Favorit";
+      summary = "Deine Prioritäten sprechen für keinen der beiden Wege eindeutig: Du hast Ziele hoch bewertet, die in entgegengesetzte Richtungen ziehen. Entscheide, welche davon Vorrang haben, und rechne neu.";
+    } else if(win === "V"){
+      verdict = (strong ? "Klare Empfehlung: " : "Tendenz: ") + "renommierter Top-Verlag";
+      summary = "Deine Prioritäten erreichst du mit einem renommierten Verlag deutlich besser: Er liefert Auswahl durch Dritte, Pressearbeit und Präsenz im Buchhandel. Rechne dafür mit längerem Vorlauf und einer niedrigeren Tantieme je Buch.";
+    } else {
+      verdict = (strong ? "Klare Empfehlung: " : "Tendenz: ") + "Self-Publishing";
+      summary = "Dir sind Ertrag, Tempo und Kontrolle wichtiger als das Siegel eines Verlags. Self-Publishing gibt dir die höhere Tantieme und die Entscheidung über Preis, Inhalt und Termin. Lektorat, Cover und Vermarktung liegen dafür bei dir.";
+    }
+    $("verdict").textContent = verdict;
+    $("summary").textContent = summary;
+
+    var bV = $("barV"), bS = $("barS");
+    bV.classList.toggle("win", win === "V"); bS.classList.toggle("win", win === "S");
+    bV.querySelector(".pct").textContent = allLow ? "–" : fmt(c.rv);
+    bS.querySelector(".pct").textContent = allLow ? "–" : fmt(c.rs);
+    requestAnimationFrame(function(){
+      bV.querySelector(".fill").style.width = (c.fv / 5 * 100) + "%";
+      bS.querySelector(".fill").style.width = (c.fs / 5 * 100) + "%";
+    });
+    $("gap").textContent = (win ? fmt(diff) + " Punkte Vorsprung. " : "") + "Die Passung zeigt auf einer Skala von 1 bis 5, wie gut der Weg die Ziele erreicht, die dir wichtig sind.";
+
+    /* Treiber */
+    var pro = $("pro"), con = $("con"); pro.textContent = ""; con.textContent = "";
+    var sign = win === "S" ? -1 : 1;
+    var sorted = c.contrib.slice().sort(function(a, b){ return sign * (b.d - a.d); });
+    var pros = sorted.filter(function(x){ return sign * x.d > 0.001; }).slice(0, 3);
+    var cons = sorted.slice().reverse().filter(function(x){ return sign * x.d < -0.001; }).slice(0, 3);
+    function item(x){
+      var li = el("li", null, x.g.title);
+      li.appendChild(el("small", null, "Deine Bewertung: " + x.r + " · Gewicht Verlag " + x.g.v + ", Self-Publishing " + x.g.s));
+      return li;
+    }
+    pros.forEach(function(x){ pro.appendChild(item(x)); });
+    cons.forEach(function(x){ con.appendChild(item(x)); });
+    $("proTitle").textContent = win ? "Das gibt den Ausschlag" : "Das spricht für den Verlag";
+    $("conTitle").textContent = win ? "Das spricht für den anderen Weg" : "Das spricht für Self-Publishing";
+    if(!pros.length) pro.appendChild(el("li", null, "Kein Ziel mit deutlichem Ausschlag."));
+    if(!cons.length) con.appendChild(el("li", null, "Kein Ziel mit deutlichem Ausschlag."));
+    $("cols").style.display = allLow ? "none" : "";
+
+    /* Zielkonflikt: hohe Tantiemen gegen Prestige-Ziele */
+    var box = $("conflict"); box.textContent = ""; box.classList.remove("show");
+    if(ratings[8] >= 4){
+      var hit = HARD.filter(function(n){ return ratings[n - 1] >= 4; }).map(function(n){ return GOALS[n - 1].title; });
+      if(hit.length){
+        box.appendChild(el("strong", null, "Zielkonflikt: "));
+        box.appendChild(document.createTextNode("Du hast „" + GOALS[8].title + "“ und zugleich " + hit.map(function(t){ return "„" + t + "“"; }).join(", ") + " hoch bewertet. Mit einem Buch lässt sich beides kaum erreichen: Das eine zieht zum Self-Publishing, das andere zum Verlag. Entscheide, was Vorrang hat."));
+        box.classList.add("show");
+      }
+    }
+
+    /* Tabelle */
+    var rows = $("rows"); rows.textContent = "";
+    GOALS.forEach(function(g, i){
+      var tr = document.createElement("tr");
+      tr.appendChild(el("td", null, g.n + ". " + g.title));
+      tr.appendChild(el("td", null, String(ratings[i])));
+      tr.appendChild(el("td", null, String(g.v)));
+      tr.appendChild(el("td", null, String(g.s)));
+      rows.appendChild(tr);
+    });
+
+    var res = $("result");
+    res.classList.add("show"); shown = true;
+    if(scroll){ res.scrollIntoView({ behavior: "smooth", block: "start" }); res.focus({ preventScroll: true }); }
+  }
+
+  $("form").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var first = -1;
+    ratings.forEach(function(x, i){
+      var card = $("q" + GOALS[i].n);
+      if(x == null){ card.classList.add("miss"); if(first < 0) first = i; }
+    });
+    if(first >= 0){
+      var missing = N - answered();
+      $("hint").textContent = missing === 1 ? "Ein Ziel ist noch nicht bewertet." : missing + " Ziele sind noch nicht bewertet.";
+      $("q" + GOALS[first].n).scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    render(true);
+  });
+
+  $("reset").addEventListener("click", function(){
+    ratings = new Array(N).fill(null); shown = false; save();
+    document.querySelectorAll('#questions input[type="radio"]').forEach(function(i){ i.checked = false; });
+    document.querySelectorAll(".q").forEach(function(c){ c.classList.remove("done", "miss"); });
+    $("result").classList.remove("show"); $("hint").textContent = "";
+    progress();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  load(); build(); progress();
+})();
+</script>
+</body>
+</html>
