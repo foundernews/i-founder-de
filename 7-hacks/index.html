@@ -10,7 +10,7 @@
 <meta property="og:description" content="Sieben Checklisten von Prof. Dr. Oliver Pott – kostenlos als PDF zum Ausdrucken und Abhaken.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://i.founder.de/7-hacks/">
-<meta property="og:image" content="https://i.founder.de/7-hacks/cover.jpg">
+<meta property="og:image" content="https://i.founder.de/7-hacks/checklisten-mockup.jpg">
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,10 +44,9 @@
   .hero .lead strong{color:var(--ink)}
 
   /* Report + Anmeldung */
-  .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:48px;align-items:center;max-width:960px;margin:0 auto;padding:44px 24px 8px}
-  .report{margin:0;justify-self:center;width:100%;max-width:310px;perspective:1400px}
-  .report img{display:block;width:100%;height:auto;border-radius:2px 5px 5px 2px;transform:rotateY(-14deg) rotateX(2deg);transform-origin:left center;box-shadow:0 26px 50px rgba(0,0,0,.28),0 5px 12px rgba(0,0,0,.14)}
-  .report figcaption{margin-top:22px;text-align:center;font-size:13px;color:var(--muted)}
+  .split{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,480px);gap:28px;align-items:center;max-width:1200px;margin:0 auto;padding:36px 24px 8px}
+  .mockup{margin:0 0 0 -12px}
+  .mockup img{display:block;width:100%;height:auto}
 
   .signup{background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:30px 30px 26px}
   .signup h2{font-family:var(--serif);font-weight:900;font-size:clamp(24px,2.6vw,30px);line-height:1.25;margin:0 0 6px;color:var(--ink)}
@@ -66,6 +65,12 @@
   .kicker{text-align:center;font-family:var(--serif);font-weight:900;font-size:clamp(26px,3vw,36px);line-height:1.25;color:var(--ink);margin:0 auto 8px;max-width:760px;text-wrap:balance}
   .sub{text-align:center;font-size:15px;color:var(--muted);margin:0 auto 28px;max-width:640px}
 
+  .pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;max-width:860px;margin:6px auto 40px;padding:0;list-style:none;align-items:center}
+  .pages img{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:3px;box-shadow:0 18px 36px rgba(26,26,26,.13),0 3px 8px rgba(26,26,26,.07)}
+  .pages li:nth-child(1){transform:rotate(-2.2deg) translateY(10px)}
+  .pages li:nth-child(2){transform:scale(1.06);position:relative;z-index:1}
+  .pages li:nth-child(3){transform:rotate(2.2deg) translateY(10px)}
+
   .hacks{list-style:none;margin:0 auto;padding:0;max-width:760px}
   .hacks li{display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
   .hacks li:last-child{border-bottom:0}
@@ -73,7 +78,8 @@
   .hacks h3{font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.3;margin:2px 0 4px;color:var(--ink)}
   .hacks p{margin:0;font-size:15px;line-height:1.6;color:var(--text)}
 
-  .about{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 34px}
+  .about{display:grid;grid-template-columns:132px minmax(0,1fr);gap:30px;align-items:center;max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 34px}
+  .about img{display:block;width:132px;height:132px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
   .about p{margin:0;font-size:15.5px;line-height:1.75}
   .about p+p{margin-top:12px}
   .about strong{color:var(--ink)}
@@ -93,7 +99,7 @@
 
   @media (max-width:860px){
     .split{grid-template-columns:minmax(0,1fr);gap:34px;padding-top:34px;justify-items:center}
-    .report{max-width:220px}
+    .mockup{margin:0;width:100%;max-width:620px}
     .signup{width:100%;max-width:480px}
   }
   @media (max-width:520px){
@@ -102,7 +108,10 @@
     .wrap{padding:0 20px}
     .split{padding-left:16px;padding-right:16px}
     .signup{padding:24px 18px 22px}
-    .about{padding:22px 20px}
+    .about{grid-template-columns:minmax(0,1fr);gap:18px;justify-items:center;padding:24px 20px}
+    .about img{width:112px;height:112px}
+    .pages{gap:10px;margin-bottom:30px}
+    .pages li:nth-child(1),.pages li:nth-child(3){transform:rotate(0) translateY(6px)}
     .site-header{padding:16px 20px}
     .brand{font-size:11.5px;letter-spacing:.24em}
     section.band{padding-top:46px}
@@ -189,9 +198,8 @@
     </section>
 
     <div class="split">
-      <figure class="report">
-        <img src="cover.jpg" width="640" height="905" alt="Titelseite des Reports: Checklisten – Die 7 wichtigsten Hacks für deinen eigenen SPIEGEL-Bestseller">
-        <figcaption>Von Prof. Dr. Oliver Pott</figcaption>
+      <figure class="mockup">
+        <img src="checklisten-mockup.jpg" srcset="checklisten-mockup-900.jpg 900w, checklisten-mockup.jpg 1800w" sizes="(max-width:860px) 92vw, 680px" width="1800" height="1283" alt="Der Report als Heft und auf dem Tablet: Checklisten – Die 7 wichtigsten Hacks für deinen eigenen SPIEGEL-Bestseller von Prof. Dr. Oliver Pott">
       </figure>
 
       <div class="signup" id="anmeldung">
@@ -209,6 +217,11 @@
       <div class="wrap">
         <h2 class="kicker">Das steckt in den Checklisten</h2>
         <p class="sub">Sieben Hacks. Jeder auf einer Seite, jeder mit einer Checkliste und einem Merksatz.</p>
+        <ul class="pages" aria-label="Drei Beispielseiten aus dem Report">
+          <li><img src="seite-hack-3.jpg" width="760" height="1075" loading="lazy" alt="Beispielseite: Hack 3, Die Zählregel, mit Checkliste"></li>
+          <li><img src="seite-hack-1.jpg" width="760" height="1075" loading="lazy" alt="Beispielseite: Hack 1, Die 1.000er-Regel, mit Checkliste"></li>
+          <li><img src="seite-hack-6.jpg" width="760" height="1075" loading="lazy" alt="Beispielseite: Hack 6, Der Firmen- und Bühnen-Hebel, mit Checkliste"></li>
+        </ul>
         <ol class="hacks">
           <li><span class="num" aria-hidden="true">1</span><div><h3>Die 1.000er-Regel</h3><p>Warum eine einzige Woche über deinen Listenplatz entscheidet.</p></div></li>
           <li><span class="num" aria-hidden="true">2</span><div><h3>Der Vorbestell-Hack</h3><p>Wie du beliebig viel Zeit bekommst, um deine 1.000 Stück einzusammeln.</p></div></li>
@@ -226,8 +239,11 @@
         <h2 class="kicker">Von wem die Checklisten kommen</h2>
         <p class="sub">Aus der Praxis der Bestseller MasterClass.</p>
         <div class="about">
+          <img src="portrait.jpg" width="360" height="360" loading="lazy" alt="Prof. Dr. Oliver Pott">
+          <div>
           <p><strong>Prof. Dr. Oliver Pott</strong> ist Professor für Entrepreneurship, Seriengründer und mehrfacher SPIEGEL-Bestsellerautor. In der Bestseller MasterClass begleitet er Expertinnen und Experten auf dem Weg zum eigenen Bestseller.</p>
           <p>Die sieben Checklisten fassen zusammen, was dort am Anfang jedes Buchprojekts steht: die Regeln der Liste – und der Plan, mit dem du sie für dich nutzt.</p>
+          </div>
         </div>
         <p class="note"><strong>Ehrlich vorab:</strong> Eine Garantie für einen Listenplatz gibt es nicht. Aber wer diese sieben Punkte sauber abarbeitet, überlässt so wenig wie möglich dem Zufall.</p>
       </div>

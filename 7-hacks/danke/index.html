@@ -35,9 +35,10 @@
   h1{font-family:var(--serif);font-weight:900;font-size:clamp(32px,4.4vw,50px);line-height:1.22;color:var(--ink);max-width:820px;margin:0 auto;text-wrap:balance}
   .lead{max-width:600px;margin:20px auto 0;font-size:18px;line-height:1.6}
 
-  .download{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;align-items:center;max-width:760px;margin:40px auto 0;background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:34px 38px}
-  .download figure{margin:0;perspective:1200px}
-  .download img{display:block;width:100%;height:auto;border-radius:2px 4px 4px 2px;transform:rotateY(-13deg) rotateX(1.5deg);transform-origin:left center;box-shadow:0 20px 40px rgba(0,0,0,.26),0 4px 10px rgba(0,0,0,.12)}
+  .download{max-width:760px;margin:26px auto 0;padding:0 24px;text-align:center}
+  .download figure{margin:0 auto;max-width:640px}
+  .download img{display:block;width:100%;height:auto}
+  .download .box{max-width:480px;margin:6px auto 0;background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:28px 30px}
   .download h2{font-family:var(--serif);font-weight:900;font-size:clamp(22px,2.4vw,27px);line-height:1.25;margin:0 0 8px;color:var(--ink)}
   .download p{margin:0 0 20px;font-size:15px;line-height:1.65}
   .btn{display:block;width:100%;border-radius:10px;padding:18px 16px;background:var(--gold);color:var(--ink);font-size:15px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;text-align:center;text-decoration:none;transition:filter .15s ease}
@@ -61,8 +62,8 @@
   @media (max-width:680px){
     .hero{padding:36px 20px 0}
     .lead{font-size:16.5px}
-    .download{grid-template-columns:minmax(0,1fr);gap:26px;padding:26px 20px;margin:32px 16px 0;justify-items:center;text-align:center}
-    .download figure{max-width:170px}
+    .download{padding:0 16px;margin-top:18px}
+    .download .box{padding:24px 20px}
     .wrap{padding:0 16px}
     .site-header{padding:16px 20px}
     .brand{font-size:11.5px;letter-spacing:.24em}
@@ -86,8 +87,8 @@
     </section>
 
     <div class="download">
-      <figure><img src="../cover.jpg" width="640" height="905" alt="Titelseite des Reports: Die 7 wichtigsten Hacks für deinen eigenen SPIEGEL-Bestseller"></figure>
-      <div>
+      <figure><img src="../checklisten-mockup.jpg" srcset="../checklisten-mockup-900.jpg 900w, ../checklisten-mockup.jpg 1800w" sizes="(max-width:680px) 92vw, 640px" width="1800" height="1283" alt="Der Report als Heft und auf dem Tablet: Die 7 wichtigsten Hacks für deinen eigenen SPIEGEL-Bestseller"></figure>
+      <div class="box">
         <h2>Die 7 wichtigsten Hacks für deinen eigenen SPIEGEL-Bestseller</h2>
         <p>Sieben Checklisten von Prof. Dr. Oliver Pott.</p>
         <a class="btn" href="../checklisten-7-hacks-spiegel-bestseller.pdf" download>Report herunterladen ↓</a>
